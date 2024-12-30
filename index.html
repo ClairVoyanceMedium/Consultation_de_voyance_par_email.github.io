@@ -390,8 +390,6 @@ blockquote { font-style: italic; }
         <br>
     </footer>
 
-
-    
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const buttons = document.querySelectorAll('.cta-button');
@@ -423,7 +421,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // **2. Suivi du scroll pour mesurer l'engagement**
   document.addEventListener('scroll', function () {
     const scrollDepth = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
-    if ([50, 75, 100].includes(scrollDepth)) { // Déclenche uniquement à 50%, 75% et 100%
+    if ([50, 75, 100].includes(scrollDepth)) {
       gtag('event', 'scroll', {
         'event_category': 'Engagement',
         'event_label': `${scrollDepth}% profondeur atteinte`
@@ -442,9 +440,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === 'visible') {
-      engagementTimer = setInterval(trackEngagement, 10000); // Lancement du timer
+      engagementTimer = setInterval(trackEngagement, 10000);
     } else {
-      clearInterval(engagementTimer); // Arrêt du timer si l'utilisateur quitte l'onglet
+      clearInterval(engagementTimer);
     }
   });
 
@@ -455,23 +453,5 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const stripe = Stripe('pk_live_Cmzt2YN9ITdo6hUpO1lSZblJ');
-            document.querySelectorAll('.cta-button').forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    stripe.redirectToCheckout({
-                        sessionId: button.getAttribute('href').split('/').pop()
-                    }).then(function (result) {
-                        if (result.error) {
-                            alert(result.error.message);
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>
