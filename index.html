@@ -390,40 +390,50 @@ blockquote { font-style: italic; }
         <br>
     </footer>
 
+
+    
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Ajout des écouteurs pour les clics
-    const buttons = document.querySelectorAll('.cta-button');
-    buttons.forEach(button => {
-      button.addEventListener('click', function () {
-        gtag('event', 'cta_click', {
-          'event_category': 'Bouton CTA',
-          'event_label': this.getAttribute('aria-label'), // Description du bouton
-          'value': parseFloat(this.querySelector('.price').textContent.trim().replace('€', '')) || 0
-        });
+document.addEventListener('DOMContentLoaded', function () {
+  const buttons = document.querySelectorAll('.cta-button');
+  let engagementTimer;
+  let timeSpent = 0;
+
+  // **1. Suivi des clics sur les boutons CTA**
+  buttons.forEach(button => {
+    button.addEventListener('click', function (e) {
+      e.preventDefault(); // Empêche le comportement par défaut du clic
+      gtag('event', 'cta_click', {
+        'event_category': 'Bouton CTA',
+        'event_label': this.getAttribute('aria-label'),
+        'value': parseFloat(this.querySelector('.price').textContent.trim().replace('€', '')) || 0
+      });
+
+      // Stripe redirection
+      const stripe = Stripe('pk_live_Cmzt2YN9ITdo6hUpO1lSZblJ');
+      stripe.redirectToCheckout({
+        sessionId: this.getAttribute('href').split('/').pop()
+      }).then(function (result) {
+        if (result.error) {
+          alert(result.error.message);
+        }
       });
     });
   });
-</script>
 
-<script>
+  // **2. Suivi du scroll pour mesurer l'engagement**
   document.addEventListener('scroll', function () {
     const scrollDepth = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
-    if (scrollDepth === 50 || scrollDepth === 75 || scrollDepth === 100) {
+    if ([50, 75, 100].includes(scrollDepth)) { // Déclenche uniquement à 50%, 75% et 100%
       gtag('event', 'scroll', {
         'event_category': 'Engagement',
         'event_label': `${scrollDepth}% profondeur atteinte`
       });
     }
   });
-</script>
 
-    <script>
-  let engagementTimer;
-  let timeSpent = 0;
-
+  // **3. Suivi du temps passé sur la page**
   function trackEngagement() {
-    timeSpent += 10; // Augmente toutes les 10 secondes
+    timeSpent += 10; // Incrémente toutes les 10 secondes
     gtag('event', 'engagement_time', {
       'event_category': 'Temps sur la page',
       'event_label': `${timeSpent} secondes`
@@ -432,11 +442,17 @@ blockquote { font-style: italic; }
 
   document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === 'visible') {
-      engagementTimer = setInterval(trackEngagement, 10000);
+      engagementTimer = setInterval(trackEngagement, 10000); // Lancement du timer
     } else {
-      clearInterval(engagementTimer);
+      clearInterval(engagementTimer); // Arrêt du timer si l'utilisateur quitte l'onglet
     }
   });
+
+  // Démarrage immédiat si l'utilisateur est déjà actif
+  if (document.visibilityState === 'visible') {
+    engagementTimer = setInterval(trackEngagement, 10000);
+  }
+});
 </script>
 
     
