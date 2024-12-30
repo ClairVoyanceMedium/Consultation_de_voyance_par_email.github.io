@@ -345,11 +345,17 @@ blockquote { font-style: italic; }
     </header>
 
     <main>
-        <section id="pricing">
-            <a href="https://buy.stripe.com/14kdRe0EQ4iH1uoaFa" id="checkout-link-1" class="cta-button prix" aria-label="Voyance privée par email - 1 question">1 Question - <span class="price">6 €</span></a>
-            <a href="https://buy.stripe.com/dR614scnycPddd66oV" id="checkout-link-2" class="cta-button prix" aria-label="Voyance privée par email - 3 questions">3 Questions - <span class="price">15 €</span></a>
-            <a href="https://buy.stripe.com/28o3cA0EQ5mL0qk14C" id="checkout-link-3" class="cta-button prix" aria-label="Voyance privée par email - 5 questions">5 Questions - <span class="price">28 €</span></a>
-        </section>
+        <a id="cta-1-question" href="https://buy.stripe.com/14kdRe0EQ4iH1uoaFa" class="cta-button prix" role="button" aria-label="Achetez une consultation par e-mail pour 1 question au prix de 6 euros">
+  1 Question - <span class="price">6 €</span>
+</a>
+
+<a id="cta-3-questions" href="https://buy.stripe.com/dR614scnycPddd66oV" class="cta-button prix" role="button" aria-label="Achetez une consultation par e-mail pour 3 questions au prix de 15 euros">
+  3 Questions - <span class="price">15 €</span>
+</a>
+
+<a id="cta-5-questions" href="https://buy.stripe.com/28o3cA0EQ5mL0qk14C" class="cta-button prix" role="button" aria-label="Achetez une consultation par e-mail pour 5 questions au prix de 28 euros">
+  5 Questions - <span class="price">28 €</span>
+</a>
 
         <section class="avis">
             <p>Profitez d'une <strong>consultation privée de voyance par e-mail</strong> avec Frederick, <strong>médium certifié et guide spirituel expérimenté</strong> depuis plus de <strong>25 années</strong>. Obtenez des <strong>réponses claires, précises et personnalisées</strong> à toutes vos questions sur l'<strong>amour</strong>, le <strong>travail</strong>, la <strong>famille</strong>, la <strong>réussite professionnelle</strong>, la <strong>santé</strong> ou encore votre <strong>avenir spirituel</strong>. Découvrez un <strong>service de voyance fiable, rapide et accessible</strong> partout dans le monde, disponible <strong>24h/7j</strong>. Faites confiance à <strong>Frederick, expert en voyance de retour affectif, prédictions professionnelles et guidance de vie</strong>. Recevez des <strong>prédictions précises</strong> et des <strong>conseils spirituels sur mesure</strong> grâce à notre service de <strong>voyance en ligne reconnue et bien notée</strong>. Expérimentez la différence avec la <strong>voyance à distance la plus performante</strong> et <strong>accessible dès 6€</strong> !</p>
@@ -384,6 +390,56 @@ blockquote { font-style: italic; }
         <br>
     </footer>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Ajout des écouteurs pour les clics
+    const buttons = document.querySelectorAll('.cta-button');
+    buttons.forEach(button => {
+      button.addEventListener('click', function () {
+        gtag('event', 'cta_click', {
+          'event_category': 'Bouton CTA',
+          'event_label': this.getAttribute('aria-label'), // Description du bouton
+          'value': parseFloat(this.querySelector('.price').textContent.trim().replace('€', '')) || 0
+        });
+      });
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('scroll', function () {
+    const scrollDepth = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
+    if (scrollDepth === 50 || scrollDepth === 75 || scrollDepth === 100) {
+      gtag('event', 'scroll', {
+        'event_category': 'Engagement',
+        'event_label': `${scrollDepth}% profondeur atteinte`
+      });
+    }
+  });
+</script>
+
+    <script>
+  let engagementTimer;
+  let timeSpent = 0;
+
+  function trackEngagement() {
+    timeSpent += 10; // Augmente toutes les 10 secondes
+    gtag('event', 'engagement_time', {
+      'event_category': 'Temps sur la page',
+      'event_label': `${timeSpent} secondes`
+    });
+  }
+
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible') {
+      engagementTimer = setInterval(trackEngagement, 10000);
+    } else {
+      clearInterval(engagementTimer);
+    }
+  });
+</script>
+
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const stripe = Stripe('pk_live_Cmzt2YN9ITdo6hUpO1lSZblJ');
