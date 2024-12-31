@@ -38,8 +38,11 @@ blockquote { font-style: italic; }
       0% {
         background-position: 200%;
       }
-      100% {
+      80% {
         background-position: -200%;
+      }
+      100% {
+        background-position: -200%; /* Pause ici */
       }
     }
 
@@ -54,7 +57,7 @@ blockquote { font-style: italic; }
       background-size: 200%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: etoiles 3s linear infinite;
+      animation: etoiles 5s ease-in-out infinite; /* Durée ajustée avec pause */
     }
     </style>
     
