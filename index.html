@@ -33,7 +33,30 @@ blockquote { font-style: italic; }
 .cta-button:focus { outline: none; box-shadow: 0 0 0 3px rgba(255,255,255,0.5); }
     </style>
 
+    <style>
+    @keyframes scintillement {
+      0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4, 0 0 50px #ff69b4;
+      }
+      50% {
+        text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4;
+      }
+      100% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4, 0 0 50px #ff69b4;
+      }
+    }
 
+    .scintillant {
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.5em;
+      text-align: center;
+      animation: scintillement 2s infinite;
+      margin-top: 20px;
+    }
+    </style>
+    
+    
     <link rel="preload" href="https://fonts.gstatic.com/s/playfairdisplay/v28/nuFiD-vYSZviVYUb_rj3ij__anPXDTg.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="https://fonts.gstatic.com/s/cinzel/v12/Cinzel-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" as="image" href="https://i.imgur.com/GmyGlKk.webp" type="image/webp" imagesizes="450px">
@@ -422,7 +445,7 @@ blockquote { font-style: italic; }
                 <li>3 questions de voyance tous domaines : <span class="price">15,00€</span></li>
                 <li>5 questions de voyance tous domaines : <span class="price">28,00€</span></li>
                 <br>
-                <p>"Votre avenir s'éclaircit enfin !"</p>
+                <p class="scintillant">Votre avenir s'éclaircit enfin</p>
             </ul>
         </section>
     </main>
