@@ -337,9 +337,28 @@ blockquote { font-style: italic; }
 
     <header>
         <picture>
-            <source srcset="https://i.imgur.com/ajZF0ae.webp" type="image/webp">
-            <img src="https://i.imgur.com/ajZF0ae.webp" alt="Voyance fiable ClairVoyanceMedium - Voyance par email rapide et discount" class="logo" width="450" height="300">
-        </picture>
+    <!-- Format WebP pour une meilleure compression -->
+    <source srcset="https://imgur.com/a/wxPMVPw.webp" type="image/webp" media="(max-width: 600px)">
+    <source srcset="https://imgur.com/a/wxPMVPw-medium.webp" type="image/webp" media="(max-width: 1200px)">
+    <source srcset="https://imgur.com/a/wxPMVPw-large.webp" type="image/webp">
+
+    <!-- Format JPEG pour la compatibilité avec les anciens navigateurs -->
+    <source srcset="https://imgur.com/a/wxPMVPw-small.jpg" type="image/jpeg" media="(max-width: 600px)">
+    <source srcset="https://imgur.com/a/wxPMVPw-medium.jpg" type="image/jpeg" media="(max-width: 1200px)">
+    <source srcset="https://imgur.com/a/wxPMVPw-large.jpg" type="image/jpeg">
+
+    <!-- Image de secours (fallback) -->
+    <img 
+        src="https://imgur.com/a/wxPMVPw.jpg" 
+        alt="Logo Clairvoyance Medium - Voyance sérieuse et fiable depuis 1998" 
+        title="Clairvoyance Medium - Votre expert en voyance depuis 1998" 
+        width="450" 
+        height="450" 
+        loading="lazy" 
+        decoding="async" 
+        fetchpriority="high">
+</picture>
+
         <h1>Consultation de Voyance Privée par E-mail</h1>
         <p class="url-text">www.clairvoyancemedium.com</p>
     </header>
