@@ -94,12 +94,19 @@ blockquote { font-style: italic; }
 
     <!-- Google Analytics 4  -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  // Configuration de Google Analytics 4
+  gtag('config', 'G-XXXXXXXXXX', {
+    'send_page_view': true, // Envoie automatiquement les pages vues
+    'linker': {
+      'domains': ['site1.com', 'site2.com', 'site3.com'] // Remplacez par vos noms de domaines
+    }
+  });
+</script>
 
     <!-- Données structurées BreadcrumbList -->
     <script type="application/ld+json">
