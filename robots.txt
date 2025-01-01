@@ -4,7 +4,7 @@ Disallow: /login/
 Disallow: /private/
 Allow: /
 
-Sitemap: https://www.votresite.com/sitemap.xml
+Sitemap:  https://clairvoyancemedium.github.io/Voyancepartelephonepaschere.github.io/sitemap.xml
 
 User-agent: Googlebot
 Allow: /
