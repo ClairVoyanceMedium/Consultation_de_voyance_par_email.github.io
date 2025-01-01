@@ -93,23 +93,18 @@ blockquote { font-style: italic; }
     </script>
 
     <!-- Google Analytics 4  -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  // Configuration Google Analytics 4
+  // Configuration de Google Analytics 4 avec suivi multi-domaines
   gtag('config', 'G-XXXXXXXXXX', {
     'send_page_view': true,
     'linker': {
-      'domains': ['votre-domaine1.com', 'votre-domaine2.com', 'votre-domaine3.com'] // Remplacez par vos domaines
+      'domains': ['site1.com', 'site2.com', 'site3.com']
     }
-  });
-
-  // Dimension personnalisée pour identifier chaque site
-  gtag('event', 'page_view', {
-    'site_name': 'Nom du site actuel' // Modifiez avec un nom unique par site
   });
 </script>
 
