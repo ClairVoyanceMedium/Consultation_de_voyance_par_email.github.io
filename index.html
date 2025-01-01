@@ -99,12 +99,17 @@ blockquote { font-style: italic; }
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  // Configuration de Google Analytics 4
+  // Configuration Google Analytics 4
   gtag('config', 'G-XXXXXXXXXX', {
-    'send_page_view': true, // Envoie automatiquement les pages vues
+    'send_page_view': true,
     'linker': {
-      'domains': ['site1.com', 'site2.com', 'site3.com'] // Remplacez par vos noms de domaines
+      'domains': ['votre-domaine1.com', 'votre-domaine2.com', 'votre-domaine3.com'] // Remplacez par vos domaines
     }
+  });
+
+  // Dimension personnalisée pour identifier chaque site
+  gtag('event', 'page_view', {
+    'site_name': 'Nom du site actuel' // Modifiez avec un nom unique par site
   });
 </script>
 
