@@ -1,42 +1,35 @@
-# Indique aux robots que toutes les pages peuvent être explorées, sauf restrictions spécifiées
 User-agent: *
 Disallow: /admin/
-Disallow: /tmp/
+Disallow: /login/
 Disallow: /private/
+Allow: /
 
-# Bloquer des URL avec paramètres inutiles pour l'indexation
-Disallow: /*?debug=true
-Disallow: /*?preview=true
+Sitemap: https://www.votresite.com/sitemap.xml
 
-# Permettre les fichiers nécessaires au bon affichage et fonctionnement
-Allow: /css/
-Allow: /js/
-Allow: /images/
-
-# Référencement des ressources multimédias
-Allow: *.png
-Allow: *.jpg
-Allow: *.webp
-Allow: *.css
-Allow: *.js
-
-# Fournir le chemin du fichier sitemap pour une meilleure indexation
-Sitemap: https://www.clairvoyancemedium.com/sitemap.xml
-
-# Autorisation pour les robots Google et Bing pour maximiser les campagnes publicitaires
 User-agent: Googlebot
 Allow: /
-User-agent: AdsBot-Google
-Allow: /
+Crawl-delay: 10
+
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 10
 
-# Bloquer les robots nuisibles ou non désirés
-User-agent: BadBot
-Disallow: /
-User-agent: EvilScraper
+User-agent: Yandex
+Allow: /
+Crawl-delay: 10
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 15
+
+User-agent: AhrefsBot
 Disallow: /
 
-# Empêcher l'exploration des fichiers sensibles
-Disallow: /config/
-Disallow: /backup/
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
