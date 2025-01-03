@@ -703,7 +703,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // **1. Suivi des clics sur les boutons CTA**
   buttons.forEach(button => {
     button.addEventListener('click', function (e) {
-      e.preventDefault(); // Empêche le comportement par défaut du clic
+      e.preventDefault();
       gtag('event', 'cta_click', {
         'event_category': 'Bouton CTA',
         'event_label': this.getAttribute('aria-label'),
