@@ -630,9 +630,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         button.setAttribute("aria-pressed", "true");
     }
 </script>
-
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
-
 </head>
 
 <body>
@@ -877,7 +874,18 @@ document.addEventListener('DOMContentLoaded', function () {
     engagementTimer = setInterval(trackEngagement, 10000);
   }
 });
-</script>
 
+    // Ça fait partie de google translate de la ligne 602 du code environ
+    document.addEventListener('DOMContentLoaded', () => {
+    const translateDropdown = document.querySelector('.goog-te-combo');
+    if (translateDropdown) {
+        console.log("L'élément '.goog-te-combo' est présent.");
+    } else {
+        console.log("L'élément '.goog-te-combo' n'est pas chargé.");
+    }
+});
+</script>
+    
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 </body>
 </html>
