@@ -624,6 +624,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <h1>Consultation de Voyance Privée par E-mail</h1>
         <p style="font-family: 'Cinzel', serif; font-weight: 400; font-size: 1.1em; color: #87CEFA; text-align: center; margin-top: 2.5px; margin-bottom: 0; text-decoration: underline;">www.clairvoyancemedium.com</p>
+  
+        <!-- Bouton Étoile pour Ajouter aux Favoris -->
+<div style="text-align: center; margin-top: 20px;">
+    <button onclick="addToFavorites()" style="background: transparent; border: none; cursor: pointer;">
+        <img id="favorite-star" src="https://i.imgur.com/FXCMs6Q.png" alt="Ajouter aux favoris" style="width: 50px; height: 50px;" />
+        <p id="favorite-text" style="font-family: Arial, sans-serif; font-size: 0.9em; color: #87CEFA; margin-top: 5px;">
+            Ajouter à vos favoris
+        </p>
+    </button>
+</div>
+        <script>
+function addToFavorites() {
+    const star = document.getElementById("favorite-star");
+    const text = document.getElementById("favorite-text");
+
+    // Change l'image et le texte
+    star.src = "https://i.imgur.com/Z5FlppT.png"; // Icône étoile jaune
+    text.innerHTML = "⭐ Ajouté à vos favoris !";
+
+    // Message guidant l'utilisateur pour ajouter le site aux favoris
+    if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+        alert("Appuyez sur le bouton de partage en bas, puis sur 'Ajouter à l'écran d'accueil'.");
+    } else if (navigator.userAgent.match(/Android/i)) {
+        alert("Appuyez sur le menu (⋮) en haut à droite, puis sur 'Ajouter à l'écran d'accueil'.");
+    } else {
+        alert("Appuyez sur Ctrl + D (ou Command + D sur Mac) pour ajouter ce site à vos favoris.");
+    }
+}
+    </script>
+        
     </header>
         <br>
         <br>
