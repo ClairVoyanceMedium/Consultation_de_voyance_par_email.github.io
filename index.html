@@ -625,15 +625,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h1>Consultation de Voyance Privée par E-mail</h1>
         <p style="font-family: 'Cinzel', serif; font-weight: 400; font-size: 1.1em; color: #87CEFA; text-align: center; margin-top: 2.5px; margin-bottom: 0; text-decoration: underline;">www.clairvoyancemedium.com</p>
   
-        <!-- Bouton Étoile pour Ajouter aux Favoris -->
-    <div style="text-align: center; margin-top: 20px;">
+ <!-- Bouton Étoile pour Ajouter aux Favoris -->
+<div style="text-align: center; margin-top: 20px;">
     <button id="favorite-button" onclick="addToFavorites()" style="background: none; border: none; cursor: pointer;" aria-label="Ajouter ce site à vos favoris" aria-pressed="false">
-        <img id="favorite-star" src="https://via.placeholder.com/50" alt="Étoile pour ajouter aux favoris" style="width: 50px; height: 50px;" loading="lazy" />
-        <p id="favorite-text" style="font-family: Arial, sans-serif; font-size: 0.9em; color: #87CEFA; margin-top: 5px;">
-            Ajouter à vos favoris
-        </p>
+        <span id="favorite-text" style="font-family: Arial, sans-serif; font-size: 1em; color: #87CEFA;">
+            Ajouter à vos favoris ⭐
+        </span>
     </button>
-   </div>
+</div>
 
 <style>
 /* Ajout d'une animation pour rendre l'interaction plus agréable */
@@ -647,27 +646,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </style>
 
 <script>
-        function addToFavorites() {
-            const star = document.getElementById("favorite-star");
-            const text = document.getElementById("favorite-text");
-            const button = document.getElementById("favorite-button");
+    function addToFavorites() {
+    const text = document.getElementById("favorite-text");
+    const button = document.getElementById("favorite-button");
 
-            star.src = "https://i.imgur.com/Z5FlppT.png"; // Icône étoile jaune
-            star.alt = "Étoile jaune indiquant que le site est ajouté aux favoris";
-            star.classList.add("active");
-            text.innerHTML = "⭐ Ajouté à vos favoris !";
-            text.style.color = "#FFD700";
+    // Mise à jour du texte et de la couleur
+    text.innerHTML = "⭐ Ajouté à vos favoris !";
+    text.style.color = "#FFD700"; // Couleur jaune doré
 
-            button.setAttribute("aria-pressed", "true");
+    // Mettre à jour l'état ARIA
+    button.setAttribute("aria-pressed", "true");
 
-            if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-                alert("Appuyez sur le bouton de partage en bas, puis sur 'Ajouter à l'écran d'accueil'.");
-            } else if (navigator.userAgent.match(/Android/i)) {
-                alert("Appuyez sur le menu (⋮) en haut à droite, puis sur 'Ajouter à l'écran d'accueil'.");
-            } else {
-                alert("Appuyez sur Ctrl + D (ou Command + D sur Mac) pour ajouter ce site à vos favoris.");
-            }
-        }
+    // Afficher un message pour guider l'utilisateur
+    if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+        alert("Appuyez sur le bouton de partage en bas, puis sur 'Ajouter à l'écran d'accueil'.");
+    } else if (navigator.userAgent.match(/Android/i)) {
+        alert("Appuyez sur le menu (⋮) en haut à droite, puis sur 'Ajouter à l'écran d'accueil'.");
+    } else {
+        alert("Appuyez sur Ctrl + D (ou Command + D sur Mac) pour ajouter ce site à vos favoris.");
+    }
+}
     </script>
         
     </header>
