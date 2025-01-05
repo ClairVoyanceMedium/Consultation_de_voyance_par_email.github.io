@@ -87,23 +87,16 @@ blockquote { font-style: italic; }
     </style>
 
   <style>
-    @font-face {
-      font-family: 'Cinzel';
-      src: url('/Cinzel-Regular.woff2') format('woff2'),
-           url('/Cinzel-Regular.woff') format('woff');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap; /* Affiche une police de secours en attendant que la police originale s'affiche */
-    }
-
-    @font-face {
-      font-family: 'Playfair Display';
-      src: url('/PlayfairDisplay-Regular.woff2') format('woff2'),
-           url('/PlayfairDisplay-Regular.woff') format('woff');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap; /* Affiche une police de secours en attendant que la police originale s'affiche */
-    }
+  @font-face {
+  font-family: 'Cinzel';
+  font-display: swap; /* Permet un rendu rapide avec une police système */
+  src: url('/Cinzel-Regular.woff') format('woff');
+}
+  @font-face {
+  font-family: 'Playfair Display';
+  font-display: swap;
+  src: url('/PlayfairDisplay-Regular.woff') format('woff');
+}
 
     body {
       font-family: 'Cinzel', serif;
