@@ -19,8 +19,6 @@
     <link rel="canonical" href="https://clairvoyancemedium.github.io/Consultation_de_voyance_par_email_pas_chere.github.io">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="/Cinzel-Regular.woff" as="font" type="font/woff" crossorigin="anonymous">
-    <link rel="preload" href="/PlayfairDisplay-Regular.woff" as="font" type="font/woff" crossorigin="anonymous">
     <link rel="icon" href="favicon_optimized.png" type="image/png" sizes="16x16 32x32 48x48 64x64 128x128" crossorigin="anonymous" loading="lazy">
 
 <!-- Préchargement des liens Stripe pour les boutons CTA -->
@@ -87,16 +85,21 @@ blockquote { font-style: italic; }
     </style>
 
   <style>
-  @font-face {
-  font-family: 'Cinzel';
-  font-display: swap; /* Permet un rendu rapide avec une police système */
-  src: url('/Cinzel-Regular.woff') format('woff');
-}
-  @font-face {
-  font-family: 'Playfair Display';
-  font-display: swap;
-  src: url('/PlayfairDisplay-Regular.woff') format('woff');
-}
+    @font-face {
+      font-family: 'Cinzel';
+      src: url('/Cinzel-Regular.woff2') format('woff2'),
+           url('/Cinzel-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Playfair Display';
+      src: url('/PlayfairDisplay-Regular.woff2') format('woff2'),
+           url('/PlayfairDisplay-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
 
     body {
       font-family: 'Cinzel', serif;
