@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr" class="no-js">
 <head>
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://js.stripe.com https://www.googleadservices.com https://translate.google.com https://translate.googleapis.com;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      font-src 'self' https://fonts.gstatic.com data:;
+      img-src 'self' https://i.imgur.com https://www.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net data:;
+      frame-src 'self' https://js.stripe.com https://www.google.com https://www.youtube.com https://translate.google.com;
+      connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://region2.google-analytics.com https://api.stripe.com https://translate.googleapis.com https://googleads.g.doubleclick.net;
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      frame-ancestors 'self';
+      upgrade-insecure-requests;
+      block-all-mixed-content;
+    ">
     
     <!-- Script anti-clickjacking -->
   <script>
@@ -20,7 +36,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" href="favicon_optimized.png" type="image/png" sizes="16x16 32x32 48x48 64x64 128x128" crossorigin="anonymous" loading="lazy">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://js.stripe.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https://i.imgur.com data:; frame-src https://js.stripe.com; connect-src 'self' https://www.google-analytics.com https://api.stripe.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;">
     
 <!-- Préchargement des liens Stripe pour les boutons CTA -->
     <link rel="prefetch" href="https://buy.stripe.com/14kdRe0EQ4iH1uoaFa">
