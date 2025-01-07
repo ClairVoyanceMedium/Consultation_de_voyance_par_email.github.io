@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr" class="no-js">
 <head>
-    <meta http-equiv="Content-Security-Policy" content="
+  <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
   script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://js.stripe.com 'nonce-{{DYNAMIC_NONCE}}' 'strict-dynamic';
   style-src 'self' https://fonts.googleapis.com;
@@ -15,6 +15,7 @@
   frame-ancestors 'none';
   upgrade-insecure-requests;
   report-uri https://votre-domaine.com/csp-report-endpoint;
+  report-to 'csp-endpoint';
 ">
     
     <!-- Script anti-clickjacking -->
